@@ -65,7 +65,7 @@ async function toText(id) {
                     //console.log(JSON.stringify(result, undefined, 4));
                     const utterances = result.results.utterances;
                     console.log(":)")
-                    resolve(JSON.stringify(utterances, undefined, 4));
+                    resolve(JSON.stringify(utterances));
                 } catch (error) {
                     console.log("other");
                      console.log(error)
