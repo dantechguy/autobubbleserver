@@ -20,6 +20,16 @@ const YD = new YoutubeMp3Downloader({
   queueParallelism: 2
 })
 
+app.use(function (req, res, next) {
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  // res.setHeader('Access-Control-Allow-Credentials', true);
+
+  next();
+});
+
 app.use(express.static('public'))
 
 app.get('/:id([a-zA-Z0-9-_]{11})', async (req, res) => {
@@ -27,7 +37,7 @@ app.get('/:id([a-zA-Z0-9-_]{11})', async (req, res) => {
     ytToText(req.params.id).then(utt => {
       console.log("sent");
       //console.log(res)
-      res.header("Access-Control-Allow-Origin", "*")
+      // res.header("Access-Control-Allow-Origin", "*")
       res.json(utt)
     }).catch((err) => {
       console.log(err)
