@@ -1,0 +1,14 @@
+{
+    "name": "Auto-Bubble-Server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "speedTextServer.js",
+    "author": "Conall Moss",
+    "license": "ISC",
+    "dependencies": {
+      "@deepgram/sdk": "^1.2.0",
+      "express": "^4.17.2",
+      "ffmpeg": "^4.4.1",
+      "youtube-mp3-downloader": "^0.7.10"
+    }
+  }
