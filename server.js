@@ -20,6 +20,8 @@ const YD = new YoutubeMp3Downloader({
   queueParallelism: 2
 })
 
+app.use(express.static('public'))
+
 app.get('/:id([a-zA-Z0-9-_]{11})', async (req, res) => {
 
     ytToText(req.params.id).then(utt => {
